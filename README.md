@@ -44,4 +44,10 @@ deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse
    
    https://android-review.googlesource.com/c/platform/cts/+/951278
 
-
+建立git仓库能够进行git clone   
+服务端：   
+git remote add origin ssh://archermind@10.13.14.7:/work/p_unity/AOSP_8.1/packages/apps/XRService   
+git push origin master    
+客户端：  
+git clone ssh://archermind@10.13.14.7:/work/p_unity/AOSP_8.1/packages/apps/XRService   
+git push ssh://archermind@10.13.14.7:/work/p_unity/AOSP_8.1/packages/apps/XRService 

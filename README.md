@@ -51,3 +51,8 @@ git push origin master
 客户端：  
 git clone ssh://archermind@10.13.14.7:/work/p_unity/AOSP_8.1/packages/apps/XRService   
 git push ssh://archermind@10.13.14.7:/work/p_unity/AOSP_8.1/packages/apps/XRService 
+
+//可以通过部分命令查找全部命令
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+~/.inputrc

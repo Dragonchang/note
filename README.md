@@ -56,3 +56,37 @@ git push ssh://archermind@10.13.14.7:/work/p_unity/AOSP_8.1/packages/apps/XRServ
 "\e[A": history-search-backward   
 "\e[B": history-search-forward    
 ~/.inputrc   
+
+
+## 1.4 版本发布流程
+
+```
+1. 拉一份全新的代码（Beetle/build/core/version_defaults.mk，修改BUILD_VERSION := 00.00.01-00）
+2. 编译并验证版本（提交build/core/version_defaults.mk）
+3. 打tag并推送服务器
+./repo forall -c 'pwd;git tag tag_rk3288_hzl_nx7_00.00.01 -m "tag_rk3288_hzl_nx7_00.00.01";git push origin tag_rk3288_hzl_nx7_00.00.01'
+
+4. 生成当前commit节点的tag xml文件：
+./repo manifest -o tag_rk3288_hzl_nx7_00.00.01.xml -r
+
+5. 提交tag xml文件：
+cp tag_rk3288_hzl_nx7_00.00.01.xml .repo/manifests
+cd .repo/manifests
+git add tag_rk3288_hzl_nx7_00.00.01.xml
+git commit -m 'tag_rk3288_hzl_nx7_00.00.01'
+git push origin HEAD:refs/for/AMT-Android-7.1.2
+
+6. 下载代码验证
+repo init -u ssh://n000339@gerritnj01.archermind.com:29418/Beetle/manifest -b AMT-Android-7.1.2 -m tag_rk3288_hzl_nx7_00.00.01
+repo sync -c
+```
+
+## 1.5 拉一个新的分支
+```
+repo forall -c 'git push origin HEAD:refs/heads/JUKI_Panel' 2>&1 | tee ./log.txt
+检查log中有无error，对应单独处理一下
+
+gerrit网站配置branch权限
+```
+
+./repo init -u ssh://n000339@gerritnj01.archermind.com:29418/Beetle/manifest -b AMT-Android-7.1.2 JUKI_Panel.xml   

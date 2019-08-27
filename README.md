@@ -90,3 +90,7 @@ gerrit网站配置branch权限
 ```
 
 ./repo init -u ssh://n000339@gerritnj01.archermind.com:29418/Beetle/manifest -b AMT-Android-7.1.2 JUKI_Panel.xml   
+
+
+
+https://www.xuejiayuan.net/blog/e5bc7cf2e4244e89a97484c9bef69630    

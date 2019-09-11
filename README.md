@@ -94,3 +94,12 @@ gerrit网站配置branch权限
 
 
 https://www.xuejiayuan.net/blog/e5bc7cf2e4244e89a97484c9bef69630    
+
+device-common.mk   
+KERNEL_DEFCONFIG := /work3/Pulgin/AOSP_8.1/kernel/msm/arch/arm64/configs/marlin_defconfig   
+include /work3/Pulgin/AOSP_8.1/kernel/msm/AndroidKernel.mk   
+ifeq ($(TARGET_PREBUILT_KERNEL),)  
+    LOCAL_KERNEL := device/google/marlin-kernel/Image.lz4-dtb   
+else   
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)   
+endif   

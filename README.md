@@ -104,7 +104,9 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)   
 endif   
 
-https://blog.csdn.net/u012417380/article/details/73353670   
+https://blog.csdn.net/u012417380/article/details/73353670    
 export ARCH=arm64   
-export CROSS_COMPILE=arm-eabi-     
+export PATH=/work3/Pulgin/AOSP_8.1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin:$PATH   
+export CROSS_COMPILE=aarch64-linux-android-   
 make marlin_defconfig    
+make   

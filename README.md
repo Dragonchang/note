@@ -103,3 +103,8 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 else   
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)   
 endif   
+
+https://blog.csdn.net/u012417380/article/details/73353670   
+export ARCH=arm64   
+export CROSS_COMPILE=arm-eabi-     
+make marlin_defconfig    

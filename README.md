@@ -99,7 +99,7 @@ device-common.mk
 KERNEL_DEFCONFIG := /work3/Pulgin/AOSP_8.1/kernel/msm/arch/arm64/configs/marlin_defconfig   
 include /work3/Pulgin/AOSP_8.1/kernel/msm/AndroidKernel.mk   
 ifeq ($(TARGET_PREBUILT_KERNEL),)  
-    LOCAL_KERNEL := device/google/marlin-kernel/Image.lz4-dtb   
+    LOCAL_KERNEL := /work3/Pulgin/AOSP_8.1/kernel/msm/arch/arm64/boot/Image.lz4-dtb   
 else   
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)   
 endif   

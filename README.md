@@ -91,7 +91,7 @@ gerrit网站配置branch权限
 
 ./repo init -u ssh://n000339@gerritnj01.archermind.com:29418/Beetle/manifest -b AMT-Android-7.1.2 JUKI_Panel.xml   
 
-
+## 1.6编译bootimage
 
 https://www.xuejiayuan.net/blog/e5bc7cf2e4244e89a97484c9bef69630    
 
@@ -109,4 +109,8 @@ export ARCH=arm64
 export PATH=/work3/Pulgin/AOSP_8.1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin:$PATH   
 export CROSS_COMPILE=aarch64-linux-android-   
 make marlin_defconfig    
-make   
+make 
+
+## 1.7piexl版本  
+refs/tags/android-8.1.0_r38    
+OPM4.171019.021.P1   

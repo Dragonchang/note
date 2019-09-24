@@ -114,3 +114,12 @@ make
 ## 1.7piexl版本  
 refs/tags/android-8.1.0_r38    
 OPM4.171019.021.P1   
+
+## 1.8  a/b系统刷机   
+sudo fastboot flash boot_a out/target/product/sailfish/boot.img    
+sudo fastboot flash boot_b out/target/product/sailfish/boot.img   
+sudo fastboot flash  system out/target/product/sailfish/system.img   
+sudo fastboot flash system_b out/target/product/sailfish/system_other.img  
+sudo fastboot erase cache     
+sudo fastboot erase userdata  
+sudo fastboot reboot   

@@ -91,25 +91,18 @@ gerrit网站配置branch权限
 
 ./repo init -u ssh://n000339@gerritnj01.archermind.com:29418/Beetle/manifest -b AMT-Android-7.1.2 JUKI_Panel.xml   
 
-## 1.6编译bootimage
-
-https://www.xuejiayuan.net/blog/e5bc7cf2e4244e89a97484c9bef69630    
-
-device-common.mk   
-KERNEL_DEFCONFIG := /work3/Pulgin/AOSP_8.1/kernel/msm/arch/arm64/configs/marlin_defconfig   
-include /work3/Pulgin/AOSP_8.1/kernel/msm/AndroidKernel.mk   
-ifeq ($(TARGET_PREBUILT_KERNEL),)  
-    LOCAL_KERNEL := /work3/Pulgin/AOSP_8.1/kernel/msm/arch/arm64/boot/Image.lz4-dtb   
-else   
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)   
-endif   
-
-https://blog.csdn.net/u012417380/article/details/73353670    
-export ARCH=arm64   
-export PATH=/work3/Pulgin/AOSP_8.1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin:$PATH   
-export CROSS_COMPILE=aarch64-linux-android-   
-make marlin_defconfig    
-make 
+## 1.6编译bootimage   
+git clone https://aosp.tuna.tsinghua.edu.cn/kernel/msm    
+git branch -r --contains d59db4e    
+git checkout -b android-msm-hammerhead-3.4-kitkat-mr2  origin/android-msm-hammerhead-3.4-kitkat-mr2   
+cd kernel/msm  
+export ARCH=arm64  
+export PATH=../../prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin:$PATH  
+export CROSS_COMPILE=aarch64-linux-android-  
+make marlin_defconfig  
+make  
+cp arch/arm64/boot/Image.lz4-dtb ../../device/google/marlin-kernel   
+make bootimage   
 
 ## 1.7piexl版本  
 refs/tags/android-8.1.0_r38    

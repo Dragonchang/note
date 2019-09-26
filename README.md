@@ -116,3 +116,8 @@ sudo fastboot flash system_b out/target/product/sailfish/system_other.img
 sudo fastboot erase cache     
 sudo fastboot erase userdata  
 sudo fastboot reboot   
+
+## 1.9 aar静态库文件反编译重新打包  
+1.将aar文件解压    
+2.替换或者修改解压之后的文件   
+3.jar cvf newAAR.aar  . 使用该命令重新打包整个目录下文件形成新的静态库   

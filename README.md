@@ -121,3 +121,28 @@ sudo fastboot reboot
 1.将aar文件解压    
 2.替换或者修改解压之后的文件   
 3.jar cvf newAAR.aar  . 使用该命令重新打包整个目录下文件形成新的静态库   
+
+## git ignore   
+git config --global core.excludesfile ~/.gitignore   
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# Intellij
+*.iml
+#.idea/workspace.xml
+.idea/
+.idea/libraries
+.idea/caches
+.idea/codeStyles
+
+# Keystore files
+*.jks
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild   

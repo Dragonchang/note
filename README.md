@@ -123,26 +123,26 @@ sudo fastboot reboot
 3.jar cvf newAAR.aar  . 使用该命令重新打包整个目录下文件形成新的静态库   
 
 ## git ignore   
-git config --global core.excludesfile ~/.gitignore   
+git config --global core.excludesfile ~/.gitignore    
 
-*.log
+*.log   
 
-#Android Studio Navigation editor temp files
-.navigation/
+#Android Studio Navigation editor temp files  
+.navigation/   
 
-#Android Studio captures folder
-captures/
+#Android Studio captures folder  
+captures/  
 
-#Intellij
-*.iml
-#.idea/workspace.xml
-.idea/
-.idea/libraries
-.idea/caches
-.idea/codeStyles
+#Intellij   
+*.iml   
+#.idea/workspace.xml  
+.idea/  
+.idea/libraries  
+.idea/caches  
+.idea/codeStyles  
 
-#Keystore files
-*.jks
+#Keystore files   
+*.jks   
 
-#External native build folder generated in Android Studio 2.2 and later
-.externalNativeBuild   
+#External native build folder generated in Android Studio 2.2 and later   
+.externalNativeBuild    

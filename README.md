@@ -124,16 +124,16 @@ sudo fastboot reboot
 
 ## git ignore   
 git config --global core.excludesfile ~/.gitignore   
-# Log Files
+
 *.log
 
-# Android Studio Navigation editor temp files
+#Android Studio Navigation editor temp files
 .navigation/
 
-# Android Studio captures folder
+#Android Studio captures folder
 captures/
 
-# Intellij
+#Intellij
 *.iml
 #.idea/workspace.xml
 .idea/
@@ -141,8 +141,8 @@ captures/
 .idea/caches
 .idea/codeStyles
 
-# Keystore files
+#Keystore files
 *.jks
 
-# External native build folder generated in Android Studio 2.2 and later
+#External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild   

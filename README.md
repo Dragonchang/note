@@ -145,4 +145,11 @@ captures/
 *.jks   
 
 #External native build folder generated in Android Studio 2.2 and later   
-.externalNativeBuild    
+.externalNativeBuild   
+
+
+## vscode运行python
+python -m venv ./xiaozhi
+.\xiaozhi\Scripts\activate
+
+

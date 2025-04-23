@@ -149,7 +149,8 @@ captures/
 
 
 ## vscode运行python
-python -m venv ./xiaozhi
-.\xiaozhi\Scripts\activate
+python -m venv ./xiaozhi   
+.\xiaozhi\Scripts\activate   
+pip install -r requirements.txt
 
 

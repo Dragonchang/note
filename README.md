@@ -154,3 +154,30 @@ python -m venv ./xiaozhi
 pip install -r requirements.txt
 
 
+###.valgrind使用方法
+1.环境搭建：
+ 下载官网最新的代码：
+Valgrind: Current Releases
+wget https://sourceware.org/pub/valgrind/valgrind-3.23.0.tar.bz2
+tar -jxvf valgrind-3.19.0.tar.bz2
+编译valgrind：
+sudo apt-get install automake
+sudo apt-get install autoconf
+cd valgrind-3.19.0
+./autogen.sh
+./configure
+make -j4
+sudo make install
+2.使用：
+/usr/local/bin/valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --log-file=valgrind_report.txt --show-reachable=yes --track-origins=yes --num-callers=30  ./SLRobot
+show-reachable 为no的时候不会打印reachable的堆栈。
+在程序ctrl+c后会生成报告。
+definitely是绝逼的内存泄露。
+indirectly也要重点关注。
+Invalid read/write of size 存在野指针等问题。
+3.修改验证：
+ 使用系统的system monitor等工具监控进程的内存的使用情况。
+4.规划：
+在服务器端搭建valgrind环境，在代码merge到代码仓之前进行打包检测，保证代码的安全性。
+
+

@@ -178,6 +178,12 @@ Invalid read/write of size 存在野指针等问题。
 3.修改验证：  
  使用系统的system monitor等工具监控进程的内存的使用情况。   
 4.规划：
-在服务器端搭建valgrind环境，在代码merge到代码仓之前进行打包检测，保证代码的安全性。   
+在服务器端搭建valgrind环境，在代码merge到代码仓之前进行打包检测，保证代码的安全性。  、
 
+### 数据迁移
+mysqldump -h localhost -P 3306 -u root -pshenlanCZ2018 -B dr_crawler > dr_crawler.sql
+mysql -h localhost -P 3306 -u root -pshenlanCZ2018 dr_crawler  < dr_crawler.sql
 
+CREATE DATABASE dr_crawler
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
